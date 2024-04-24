@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(199, 248, 248);
+}
+
+.nav-div {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 0 20px;
+    border: 1px black solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.navContent {
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navContent select {
+    padding: 5px 15px;
+    height: 50%;
+    border: none;
+}
+
+#export {
+    appearance: none;
+}
+
+.board {
+    display: flex;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    transition: flex 0.5s;
+    background-color: #f5f5f5;
+}
+
+.column.collapsed {
+    flex: 0;
+    min-width: 30px;
+}
+
+.clickable-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-right: 30px;
+    cursor: pointer;
+}
+
+.arrow {
+    font-size: 20px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.column.collapsed .tasks,
+.column.collapsed button {
+    display: none;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.column.collapsed h3 {
+    writing-mode: vertical-lr;
+    text-align: center;
+    cursor: pointer;
+}
+
+.column.collapsed .tasks {
+    display: none;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.card {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #ccc;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.card-actions button {
+    margin-right: 5px;
+}
+
+
+button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #ccc;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #aaa;
+}
+
+input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.card.urgent {
+    background-color: red;
+}
+
+.card.high {
+    background-color: orange;
+}
+
+.card.medium {
+    background-color: yellow;
+}
+
+.card.low {
+    background-color: green;
+}

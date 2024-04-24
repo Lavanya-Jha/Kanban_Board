@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kanban Board</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-div">
+            <div class="title">
+                <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/kanban-board-4185955-3461987.png"
+                    alt="Kanban logo" class="logo" width="10%">
+                <h4>Kanban Website</h4>
+            </div>
+            <div class="navContent">
+                <select name="users" id="users" class="users_dropDown">
+                    <option value="none" selected hidden>Users</option>
+                </select>
+                <select name="languages" id="languages" class="language_dropDown">
+                    <option value="english" selected="">English</option>
+                    <option value="hindi">हिन्दी</option>
+                </select>
+                <select name="export" id="export">
+                    <option value="none" selected hidden>Export</option>
+                    <option value="pdf">To PDF</option>
+                    <option value="excel">To Excel</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+    <br><br>
+    <main>
+        <div id="kanban-board" class="board">
+            <div class="column" id="todo">
+                <h3 onclick="toggleColumn('todo')">To Do <span class="arrow">&larr;</span></h3>
+                <div class="tasks" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <button onclick="addTask('todo')">Add Task</button>
+            </div>
+            <div class="column" id="inProgress">
+                <h3 onclick="toggleColumn('inProgress')">In Progress <span class="arrow">&larr;</span></h3>
+                <div class="tasks" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <button onclick="addTask('inProgress')">Add Task</button>
+            </div>
+            <div class="column" id="done">
+                <h3 onclick="toggleColumn('done')">Done <span class="arrow">&larr;</span></h3>
+                <div class="tasks" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <button onclick="addTask('done')">Add Task</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
